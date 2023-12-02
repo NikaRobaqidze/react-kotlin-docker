@@ -85,7 +85,7 @@ serve -s build
 ```
  - Now server listening on `localhost:3000`;
 
------------------------------- The end. -------------------------------
+The end.
 Project is ready for testing!
 
 Author: Niko Robaqidze
