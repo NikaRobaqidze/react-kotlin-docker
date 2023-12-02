@@ -1,16 +1,16 @@
-## About
+# About
 
 The project involves the collaboration of two server applications: a React server designed for the client side (front-end) and a Kotlin server built on the Ktor framework (back-end) responsible for receiving and processing REST API requests from the React server. The primary scenario involves users entering a domain to initiate domain research.
 
 In this scenario, users input a domain for research initiation. As a result, the client receives information on discovered sub-domains and any additional details if the domain has been previously researched. All successfully completed searches are stored, allowing clients to access and review them on the history page.
 
-# React
+## React
 
 The React server is responsible for rendering two pages: Home and History, utilizing routing for seamless navigation. The server specifically uses port 8000 (localhost:3000) The Home page features an input field where users enter a domain. The entered string content is then sent to the backend using the Fetch API. Before initiating the fetch, the server performs checks to ensure the user has filled in the domain field and that the entered value is a valid domain, employing Regular Expressions for validation.
 
 To enhance user-friendliness, the Bootstrap framework is employed, providing visual cues to users in case of errors, such as input validation issues or thrown errors during the process. Upon a successful response from the server, an object containing information about sub-domains and execution time is retrieved. This information is then presented to the user for a comprehensive overview of the domain research results.
 
-# Kotlin
+## Kotlin
 
 The Kotlin server utilizes the Ktor framework to establish an HTTP server on localhost, specifically using port 8000 (localhost:8000). Initially, when the server is launched, it begins the process of building necessary Docker images. Once the building is successfully completed, the server will be started. The server is designed to handle two distinct GET methods: 1) `/domain-data?domain=[your domain]` and 2) `/history`.
 
@@ -27,23 +27,23 @@ Before responding to the user, all data, along with the execution time, is inser
 
 2) To get logs of research, the server connects to a database and builds JSON strings to receive users.
 
-# Notice
+## Notice
 If while kotlin server working you get an error with the database connection, please, re-install the .jar file. In my case in IntelliJ -> File -> Project Structure -> Project Settings -> Libraries -> select "mysql-connector-j-8.2.0" and click on "-" in same column -> click on "+" near -> select java -> `/kotlin-server/kotlin-server/lib/mysql-connector-j-8.2.0.jar` -> OK -> Apply.
 
-## Usage
+# Usage
  - npm ([Node.js](https://nodejs.org/en)) (version ^10.2.3);
  - [Kotlin](https://kotlinlang.org/) (version ^1.9.255-SNAPSHOT (JRE ^17.0.9+8)), using JetBrains - IntelliJ;
  - MySQL, using [XAMPP](https://www.apachefriends.org/);
  - [docker](https://www.docker.com/) (version 24.0.7, build afdd53b4e3);
     [docker-desktop](https://www.docker.com/products/docker-desktop/)
- - (theHarvester)[https://github.com/laramies/theHarvester] cloned;
+ - [theHarvester](https://github.com/laramies/theHarvester) cloned;
 
-## Installation
+# Installation
 
-# Notice
+## Notice
 The project was developed on the Manjaro Linux OS. The suggestions might not be useful for users using a different operating system.
 
-# Docker
+## Docker
 
  - Launch `docker-dekstop`. Sometimes, without it, Docker methods do not work well.
 
@@ -59,7 +59,7 @@ or
 
  - Set it as an argument in the project running command. In my case: InteliJ -> Run/Debug Configurations -> Program arguments.
 
-# MySQL - Database
+## MySQL - Database
 
  - Create a user and set username and password copied from the environment file:
 `/kotlin-server/kotlin-server/.env`;
@@ -69,15 +69,15 @@ or
  - Import/Create a table using .sql file:
 `/Database/domain_researches.sql`
 
-## Run servers
+# Run servers
 
-# Koltin (ktor)
+## Koltin (ktor)
  - Run InteliJ (in my case) File -> Open -> "/kotlin-server/kotlin-server";
  - Run project (Launcher - Main.kt);
  - It starts building the required Docker image(s); 
  - Now server listening on `localhost:8080`;
 
-# React
+## React
  - Change directory to `/react-server` folder;
  - To launch the React server
 ```bash
@@ -85,7 +85,7 @@ serve -s build
 ```
  - Now server listening on `localhost:3000`;
 
-<!-- ------------------------------ The end. ------------------------------- -->
+------------------------------ The end. -------------------------------
 Project is ready for testing!
 
 Author: Niko Robaqidze
